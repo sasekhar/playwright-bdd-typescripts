@@ -1,0 +1,8 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","0","TC1 - Verify homepage content through API","","Fri Nov 28 16:23:46 UTC 2025","passed","Fri Nov 28 16:23:46 UTC 2025","","Sauce Demo - API Tests","",""
+"","0","Should add Sauce Labs Backpack to cart","","Fri Nov 28 16:23:46 UTC 2025","passed","Fri Nov 28 16:23:46 UTC 2025","","Inventory Functionality - UI Tests","",""
+"","0","Should validate Sauce Labs Backpack product details","","Fri Nov 28 16:23:46 UTC 2025","passed","Fri Nov 28 16:23:46 UTC 2025","","Inventory Functionality - UI Tests","",""
+"","0","Login with valid credentials","","Fri Nov 28 16:23:46 UTC 2025","passed","Fri Nov 28 16:23:46 UTC 2025","","Login Functionality - UI Tests","",""
+"","0","Verify Title Page","","Fri Nov 28 16:23:46 UTC 2025","passed","Fri Nov 28 16:23:46 UTC 2025","","Login Functionality - UI Tests","",""
+"","0","Login with invalid credentials","","Fri Nov 28 16:23:46 UTC 2025","passed","Fri Nov 28 16:23:46 UTC 2025","","Login Functionality - UI Tests","",""
+"","0","TC2 - Verify manifest.json content","","Fri Nov 28 16:23:46 UTC 2025","failed","Fri Nov 28 16:23:46 UTC 2025","","Sauce Demo - API Tests","",""
