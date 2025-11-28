@@ -26,15 +26,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rrendon2025/playwright-BDD.git"
+    "url": "git+https://github.com/sasekhar/playwright-bdd-typescripts.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rrendon2025/playwright-BDD/issues"
+    "url": "https://github.com/sasekhar/playwright-BDD/issues"
   },
-  "homepage": "https://github.com/rrendon2025/playwright-BDD#readme",
+  "homepage": "https://github.com/sasekhar/playwright-BDD#readme",
   "dependencies": {
     "@cucumber/cucumber": "^11.3.0",
     "@playwright/test": "^1.52.0",

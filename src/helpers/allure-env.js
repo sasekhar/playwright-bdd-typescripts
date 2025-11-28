@@ -62,7 +62,7 @@ console.log('✅ Allure categories written to', path.join(allureResultsDir, 'cat
 const executor = {
   "name": "Playwright BDD",
   "type": "playwright",
-  "url": "https://github.com/rrendon2025/playwright-BDD",
+  "url": "https://github.com/sasekhar/playwright-BDD",
   "buildName": `Test run ${new Date().toISOString()}`
 };
 

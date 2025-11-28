@@ -26,7 +26,7 @@ A robust automation framework built with Playwright, TypeScript, and Cucumber.js
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/rrendon2025/playwright-bdd-automation.git
+git clone https://github.com/sasekhar/playwright-bdd-automation.git
 cd playwright-bdd-automation
 ```
 
@@ -192,7 +192,7 @@ The framework is configured to automatically publish Allure reports to GitHub Pa
 
 2. **Access Your Reports**:
    - After the GitHub Actions workflow runs successfully, your Allure reports will be available at:
-   - For example: https://rrendon2025.github.io/playwright-bdd-automation/
+   - For example: https://sasekhar.github.io/playwright-bdd-automation/
 
 3. **Workflow Configuration**:
    - The GitHub Actions workflow automatically:
