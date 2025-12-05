@@ -1,5 +1,5 @@
 BROWSER=chromium
 HEADLESS=true
-BASE_URL=https://www.saucedemo.com
+BASE_URL=[web.buildmystoredev.in](https://web.buildmystoredev.in/login)
 STANDARD_USER=standard_user
 PASSWORD=secret_sauce
