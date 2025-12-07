@@ -6,8 +6,13 @@ Feature: Login Functionality - UI Tests
 
   Background:
     Given Initiate required instances to execute the test
-    And I am on the login page
+    And Navigate to build my store login screen
 
+  @homepage
+  Scenario: Verify homepage screen
+    When provide the mobile number and click on the generate otp button
+    # Then the current url should be the login page "https://web.buildmystoredev.in/"
+    
   @login-title
   Scenario: Verify Title Page
     Then the page title should be "Swag Labs"

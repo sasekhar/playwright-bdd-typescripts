@@ -1,4 +1,4 @@
-import * as allure from 'allure-js-commons';
+import * as allureModule from 'allure-js-commons';
 import { ContentType } from 'allure-js-commons';
 import { After, AfterStep, Before, BeforeStep } from '@cucumber/cucumber';
 import { getPage } from './playwright';
@@ -12,7 +12,7 @@ if (!fs.existsSync(allureResultsDir)) {
 }
 
 // Create Allure runtime
-const allureReporter = new allure.AllureRuntime({ resultsDir: allureResultsDir });
+const allureReporter = new (allureModule as any).default({ resultsDir: allureResultsDir });
 let allureTest: any = null;
 let stepCount = 0;
 

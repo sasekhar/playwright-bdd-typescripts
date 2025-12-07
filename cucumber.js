@@ -10,7 +10,7 @@ module.exports = {
       '@cucumber/pretty-formatter'
     ],
     paths: ['src/features/**/*.feature'],
-    require: ['src/steps/**/*.ts'],
+    require: ['src/hooks.ts', 'src/steps/**/*.ts'],
     requireModule: ['ts-node/register'],
     timeout: 60000
   }

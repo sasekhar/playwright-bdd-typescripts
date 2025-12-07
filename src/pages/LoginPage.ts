@@ -3,6 +3,8 @@ import { BasePage } from './BasePage';
 
 export class LoginPage extends BasePage {
   // Selectors
+  private readonly mobileNumber = '#mobile';
+  private readonly generateOtp = '#button';
   private readonly usernameInput = '#user-name';
   private readonly passwordInput = '#password';
   private readonly loginButton = '#login-button';

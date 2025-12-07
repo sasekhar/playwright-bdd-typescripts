@@ -1,4 +1,4 @@
-import { Given, When, Then, BeforeAll, AfterAll, Before, After, ITestCaseHookParameter, setDefaultTimeout } from '@cucumber/cucumber';
+import { Given, When, Then, BeforeAll, AfterAll, Before, After, AfterStep, ITestCaseHookParameter, setDefaultTimeout } from '@cucumber/cucumber';
 import { initBrowser, closeBrowser, getPage } from './utils/playwright';
 import { ENV } from './utils/env';
 import * as fs from 'fs';
@@ -33,6 +33,20 @@ AfterAll({ timeout: 60000 }, async () => {
 
 Before({ timeout: 60000 }, async function () {
   console.log("Before All in The Hooks");
+});
+
+AfterStep({ timeout: 10000 }, async function (this: any, testCase: ITestCaseHookParameter) {
+  try {
+    // const page = getPage();
+    // if (!page) return;
+
+    // Capture screenshot after every step
+    const screenshot = await getPage().screenshot();
+    this.attach(screenshot, 'image/png'); // attach to Cucumber report
+  } catch (err) {
+    // If browser/page isn't initialized yet, skip silently to avoid breaking the run
+    console.warn('AfterStep: unable to take screenshot:', (err as any)?.message || err);
+  }
 });
 
 // Take a screenshot if a scenario fails

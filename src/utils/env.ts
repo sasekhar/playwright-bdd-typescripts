@@ -11,11 +11,11 @@ if (fs.existsSync(envPath)) {
 }
 
 export const ENV = {
-  BASE_URL: process.env.BASE_URL || 'https://www.saucedemo.com',
+  BASE_URL: process.env.BASE_URL || 'https://web.buildmystoredev.in/login',
   STANDARD_USER: process.env.STANDARD_USER || 'standard_user',
   LOCKED_OUT_USER: process.env.LOCKED_OUT_USER || 'locked_out_user',
   PASSWORD: process.env.PASSWORD || 'secret_sauce',
-  HEADLESS: process.env.HEADLESS === 'true',
+  HEADLESS: process.env.HEADLESS === 'false' ? false : true,
   BROWSER: (process.env.BROWSER || 'chromium') as 'chromium' | 'firefox' | 'webkit',
   SLOW_MO: parseInt(process.env.SLOW_MO || '0'),
   TIMEOUT: parseInt(process.env.TIMEOUT || '30000'),

@@ -1,5 +1,7 @@
-import { Page } from '@playwright/test';
+import { Page, TestInfo } from '@playwright/test';
 import { ENV } from '../utils/env';
+import { getPage } from '../utils/playwright';
+
 
 /**
  * Base Page Object that provides common functionality for all page objects
@@ -7,11 +9,36 @@ import { ENV } from '../utils/env';
 export class BasePage {
   constructor(protected page: Page) {}
 
+  // async captureScreenshot(name: string): Promise<void> {
+  //   const screenshot = await getPage().screenshot();
+  //   // attach(screenshot, 'image/png');
+  //   await this.page.screenshot({ path: `test-results/screenshots/${name}-${new Date().toISOString().replace(/:/g, '-')}.png` });
+
+  // }
+
+  // /**
+  //  * Take a screenshot
+  //  * @param name Name of the screenshot file
+  //  */
+  // async takeScreenshot(name: string): Promise<void> {
+  //   await this.page.screenshot({
+  //     path: `test-results/screenshots/${name}-${new Date().toISOString().replace(/:/g, '-')}.png`,
+  //   });
+  // }
+
   /**
    * Navigate to the base URL
    */
   async navigateToBaseURL(): Promise<void> {
     await this.page.goto(ENV.BASE_URL);
+    // this.captureScreenshot('NavigateToBaseURL');
+    // const screenshot = await getPage().screenshot();
+    //   attach(screenshot, 'image/png');
+    // await this.maximizeWindow(); // call maximize after navigation
+  }
+
+  async maximizeWindow(): Promise<void> {
+    await this.page.setViewportSize({ width: 1920, height: 1080 });
   }
 
   /**
@@ -75,14 +102,4 @@ export class BasePage {
   async isVisible(selector: string): Promise<boolean> {
     return await this.page.isVisible(selector);
   }
-
-  /**
-   * Take a screenshot
-   * @param name Name of the screenshot file
-   */
-  async takeScreenshot(name: string): Promise<void> {
-    await this.page.screenshot({
-      path: `test-results/screenshots/${name}-${new Date().toISOString().replace(/:/g, '-')}.png`,
-    });
-  }
-} 
+}
