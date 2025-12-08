@@ -35,6 +35,7 @@ export class HomePageFunctions extends BasePage {
     }
   }
 
+  // Log out from Build My Store App
   async logOutBuildMyStoreApp() {
     try{
       const getprofileIcon = this.homePageControls.getprofileIcon?.();
