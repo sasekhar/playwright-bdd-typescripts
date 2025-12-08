@@ -33,14 +33,30 @@ AfterAll({ timeout: 60000 }, async () => {
   await closeBrowser();
 });
 
+// Before({ timeout: 60000 }, async function () {
+//   console.log("Before All in The Hooks");
+  
+//   const page = await initBrowser();
+//   // Attach the Playwright page to the Cucumber World so step definitions can access it via `this.page`
+//   (this as any).page = page;
+//   loginPage = new LoginPage(page);
+//   homePageFunctions = new HomePageFunctions(page);
+// });
+
 Before({ timeout: 60000 }, async function () {
   console.log("Before All in The Hooks");
+  
+  const page = await initBrowser();
+  // Attach the Playwright page and page objects to the Cucumber World so step definitions can access them
+  (this as any).page = page;
+  (this as any).loginPage = new LoginPage(page);
+  (this as any).homePageFunctions = new HomePageFunctions(page);
 });
 
 AfterStep({ timeout: 10000 }, async function (this: any, testCase: ITestCaseHookParameter) {
   try {
-    // const page = getPage();
-    // if (!page) return;
+    const page = getPage();
+    if (!page) return;
 
     // Capture screenshot after every step
     const screenshot = await getPage().screenshot();
@@ -52,7 +68,7 @@ AfterStep({ timeout: 10000 }, async function (this: any, testCase: ITestCaseHook
 });
 
 // Take a screenshot if a scenario fails
-After({ timeout: 10000 }, async function (testCase: ITestCaseHookParameter) {
+After({ timeout: 5000 }, async function (this: any, testCase: ITestCaseHookParameter) {
   const page = getPage();
   
   if (testCase?.result?.status === 'FAILED') {
@@ -70,5 +86,11 @@ After({ timeout: 10000 }, async function (testCase: ITestCaseHookParameter) {
     });
     this.attach(screenshot, 'image/png');
   }
-  this.homePageFunctions.logOutBuildMyStoreApp();
+  console.log("After Before Logging Out");
+  console.log("Home Page Functions get String:", JSON.stringify(this.homePageFunctions));
+  if (this.homePageFunctions) {
+    console.log("After Before Logging Out --- 1");
+    await this.homePageFunctions.logOutBuildMyStoreApp();
+    console.log("After Before Logging Out --- 2");
+  }
 });

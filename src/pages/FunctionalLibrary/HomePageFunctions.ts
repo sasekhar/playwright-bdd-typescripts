@@ -39,6 +39,7 @@ export class HomePageFunctions extends BasePage {
     try{
       const getprofileIcon = this.homePageControls.getprofileIcon?.();
       if (getprofileIcon) await this.page.click(getprofileIcon);
+      await this.page.waitForTimeout(3000); // Wait for 2 seconds to ensure dropdown is visible
       const getlogOutButton = this.homePageControls.getlogOutButton?.();
       if (getlogOutButton) await this.page.click(getlogOutButton);
 

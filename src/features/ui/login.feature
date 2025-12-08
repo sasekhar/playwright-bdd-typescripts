@@ -5,8 +5,8 @@ Feature: Login Functionality - UI Tests
   So that I can access my account
 
   Background:
-    Given Initiate required instances to execute the test
-    And Navigate to build my store login screen
+    # Given Initiate required instances to execute the test
+    Given Navigate to build my store login screen
 
   @homepage
   Scenario: Verify homepage screen
