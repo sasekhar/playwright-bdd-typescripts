@@ -35,6 +35,21 @@ export class HomePageFunctions extends BasePage {
     }
   }
 
+  async logOutBuildMyStoreApp() {
+    try{
+      const getprofileIcon = this.homePageControls.getprofileIcon?.();
+      if (getprofileIcon) await this.page.click(getprofileIcon);
+      const getlogOutButton = this.homePageControls.getlogOutButton?.();
+      if (getlogOutButton) await this.page.click(getlogOutButton);
+
+      await this.page.waitForLoadState('load');
+      // this.captureScreenshot('clickGenerateOtp');
+    }
+    catch(error : any){
+      console.error("Error while logging out build my strore: ", error.message);
+    }
+  }
+
   /**
    * Enter mobile number and click on generateOpt button
    */

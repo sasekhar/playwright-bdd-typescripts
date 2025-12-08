@@ -6,6 +6,8 @@ export class HomePageControls extends BasePage {
 // Selectors
   private readonly mobileNumber = '#mobile';
   private readonly generateOtp: string = "//button[@type='button']";
+  private readonly profileIcon: string = "//a[@class='ant-dropdown-trigger css-fruyyv']//img[@class='ant-image-img css-xcat2f css-1gprcj2']";
+  private readonly logOutButton : string = "//span[normalize-space()='Log Out']";
 
   constructor(page: Page) {
     super(page);
@@ -22,5 +24,13 @@ export class HomePageControls extends BasePage {
 
   public getOtInputCells(page: Page, col: number) {
   return page.locator(`(//*[@id="otp"]//input)[${col}]`);
-}
+  }
+
+  public getprofileIcon(): string {
+    return this.profileIcon;
+  }
+
+  public getlogOutButton(): string {
+    return this.logOutButton;
+  }
 }

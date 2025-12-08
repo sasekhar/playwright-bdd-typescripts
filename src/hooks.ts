@@ -5,9 +5,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { LoginPage } from './pages/LoginPage';
 import { InventoryPage } from './pages/InventoryPage';
+import { HomePageFunctions } from './pages/FunctionalLibrary/HomePageFunctions';
 
 let loginPage: LoginPage;
 let inventoryPage: InventoryPage;
+let homePageFunctions: HomePageFunctions;
 
 // Set default timeout to 10 seconds
 setDefaultTimeout(10000);
@@ -68,4 +70,5 @@ After({ timeout: 10000 }, async function (testCase: ITestCaseHookParameter) {
     });
     this.attach(screenshot, 'image/png');
   }
+  this.homePageFunctions.logOutBuildMyStoreApp();
 });
