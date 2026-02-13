@@ -74,8 +74,8 @@ jobs:
         #   OLLAMA_API_PATH: ${{ secrets.OLLAMA_API_PATH || '/api/generate' }}
         run: |
           npm run prepare:allure
-          # Run only scenarios with the @apiTestSmokeTwo tag (change path or tag as needed)
-          npx cucumber-js src/features/api/user.feature --tags "@apiTestSmokeTwo" || true
+          # Run only scenarios with the @homepage tag (change path or tag as needed)
+          npx cucumber-js src/features/ui/login.feature --tags "@homepage" || true
 
           # First generate the allure report so we can read the accurate counts
           node src/utils/cucumber-allure-adapter.js || true
